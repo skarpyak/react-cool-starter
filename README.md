@@ -2,7 +2,7 @@
 
 A simple but feature rich starter boilerplate for you to build an [universal](https://medium.com/@mjackson/universal-javascript-4761051b7ae9#.mtjf14xy5) web app with the best development experience and a focus on performance and best practices.
 
-Built on the top of [Node.js](https://nodejs.org/en/), [Express](https://expressjs.com/), [React](https://facebook.github.io/react/), [Redux](https://github.com/reactjs/redux) and [React Router](https://github.com/reactjs/react-router). Includes all the hot stuff and modern web development tools such as [Webpack 2](https://gist.github.com/sokra/27b24881210b56bbaff7), [Babel](https://babeljs.io/), [PostCSS](https://github.com/postcss/postcss-loader), [Immutable-js](https://facebook.github.io/immutable-js/), [React Hot Loader 3](https://github.com/gaearon/react-hot-boilerplate/pull/61) and [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-extension). See section [**“Features”**](#features) for more other awesome features you can expect.
+Built on the top of [Node.js](https://nodejs.org/en/), [Express](https://expressjs.com/), [React](https://facebook.github.io/react/), [Redux](https://github.com/reactjs/redux) and [React Router](https://github.com/reactjs/react-router). Includes all the hot stuff and modern web development tools such as [Webpack 2](https://gist.github.com/sokra/27b24881210b56bbaff7), [Babel](https://babeljs.io/), [PostCSS](https://github.com/postcss/postcss-loader), [Immutable-js](https://facebook.github.io/immutable-js/) and [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-extension). See section [**“Features”**](#features) for more other awesome features you can expect.
 
 I will improve the starter boilerplate continuously and keep all of the technologies on trend. Welcome to join me if you want. Hope you guys love it 😉
 
@@ -22,8 +22,6 @@ Really cool starter boilerplate with the most popular technologies:
 * [React Router](https://github.com/reactjs/react-router) as the router.
 * [react-helmet](https://github.com/nfl/react-helmet) to manage title, meta, styles and scripts tags on both server and client.
 * [Express](https://expressjs.com/) server.
-* [helmet](https://github.com/helmetjs/helmet) helps secure Express server with various HTTP headers.
-* [compression](https://github.com/expressjs/compression) to increase the speed of Express server response.
 * [Babel](https://babeljs.io/) for ES6 and ES7 transpiling.
 * [morgan](https://github.com/expressjs/morgan) the HTTP request logger for server side debugging.
 * [Webpack 2](https://gist.github.com/sokra/27b24881210b56bbaff7) for bundling and [**"Tree-Shaking"**](http://www.2ality.com/2015/12/webpack-tree-shaking.html) support.
@@ -34,7 +32,6 @@ Really cool starter boilerplate with the most popular technologies:
 * [redux-thunk](https://github.com/gaearon/redux-thunk) as the middleware to deal with asynchronous action.
 * [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-extension) for next generation developer experience.
 * [react-router-redux](https://github.com/reactjs/react-router-redux) to keep your router in sync with Redux state.
-* [React Hot Loader 3](https://github.com/gaearon/react-hot-boilerplate/pull/61) tweaks React component/store in real time.
 * [nodemon](http://nodemon.io/) to reload non-boundled files (e.g. `./src/server.js`).
 * [Immutable-js](https://facebook.github.io/immutable-js/) provides persistent data collections which increase efficiency and simplicity.
 * [react-addons-shallow-compare](https://facebook.github.io/react/docs/shallow-compare.html) for a performance boost, it works perfectly with immutable data structure.
@@ -43,6 +40,7 @@ Really cool starter boilerplate with the most popular technologies:
 * [StyleLint](http://stylelint.io/) to maintain a consistent css/scss code style.
 * CSS and SASS support with [PostCSS](https://github.com/postcss/postcss-loader) for advanced transformations (e.g. autoprefixer). [CSS Modules](https://github.com/css-Modules/css-Modules) enabled.
 * Image (with [image-webpack-loader](https://github.com/tcoopman/image-webpack-loader) for optimizing) and Font support.
+* Hot reloading support.
 * Split vendor's libraries from client bundle.
 * No other view engines, just javascript based HTML rendering template.
 * Shared app config between development and production.
@@ -145,9 +143,13 @@ Here is the structure of the app, which serve as generally accepted guidelines a
 
 ## Server Side Security and Performance
 
-Concering to the security for Express in production. I already setup the [helmet](https://github.com/helmetjs/helmet) for you. It can help protect your app from some well-known web vulnerabilities by setting HTTP headers appropriately. It's just a basic protected mechanism for your app, you can see [Security best practices](https://expressjs.com/en/advanced/best-practice-security.html) for more advanced configuration.
- 
-In addition, for the performance of server response. I also setup the [compression](https://github.com/expressjs/compression), which supports Gzip compressing can greatly decrease the size of the response body and hence increase the speed of server response time.
+Concering to the security and performance for Express in production, I already setup some middlewares for you:
+
+* [helmet](https://github.com/helmetjs/helmet) - Helps secure Express server with various HTTP headers.
+* [hpp](https://github.com/analog-nico/hpp) - Express middleware to protect against HTTP Parameter Pollution attacks.
+* [compression](https://github.com/expressjs/compression) - Gzip compression support for speeding up Express server responses.
+
+Note: It's just a basic protected mechanism for your app, you can see [Security best practices](https://expressjs.com/en/advanced/best-practice-security.html) for more advanced configuration.
 
 
 ## Setup Redux DevTools Extension

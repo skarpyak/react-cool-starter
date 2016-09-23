@@ -78,8 +78,8 @@ function getEntry() {
   if (isDev) {
     entry = {
       app: [
+        'webpack/hot/only-dev-server',
         'webpack-hot-middleware/client',
-        'react-hot-loader/patch',
         './src/client.js',
       ],
     };
@@ -93,11 +93,13 @@ function getEntry() {
         'redux', 'react-redux',
         'redux-thunk',
         'immutable',
+        'react-immutable-proptypes',
         'redux-immutable',
         'react-router',
         'react-router-redux',
         'react-helmet',
         'axios',
+        'redbox-react',
       ],
     };
   }

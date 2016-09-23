@@ -1,6 +1,13 @@
 # Changelog
 
 
+### 1.2.2
+
+> 2016-09-23
+
+* Adding [hpp](https://github.com/analog-nico/hpp) Express middleware to protect against HTTP Parameter Pollution attacks.
+
+
 ### 1.2.1
 
 > 2016-09-21
