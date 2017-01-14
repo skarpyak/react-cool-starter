@@ -67,7 +67,7 @@
       }
     },
     "build": {
-      "command": "webpack --progress --hide-modules --display-error-details --config ./tools/webpack/config.babel.js",
+      "command": "cross-env webpack --progress --hide-modules --display-error-details --config ./tools/webpack/config.babel.js",
       "env": {
         "NODE_ENV": "production"
       }
@@ -142,6 +142,7 @@
     "chai": "^3.5.0",
     "chai-enzyme": "^0.6.1",
     "coveralls": "^2.11.15",
+    "cross-env": "^3.1.4",
     "css-loader": "^0.26.1",
     "enzyme": "^2.7.0",
     "eslint": "^3.13.1",
