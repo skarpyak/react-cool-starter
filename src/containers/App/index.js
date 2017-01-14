@@ -3,13 +3,13 @@ import Helmet from 'react-helmet';
 import config from '../../config';
 
 import '../../theme/normalize.css';
-import styles from './App.scss';
+import styles from './styles.scss';
 
 const App = ({ children }) => (
   <div className={styles.App}>
     <Helmet {...config.app} />
     <div className={styles.header}>
-      <img src={require('./logo.svg')} alt="Logo" role="presentation" />
+      <img src={require('./assets/logo.svg')} alt="Logo" role="presentation" />
       <h1>{config.app.title}</h1>
     </div>
     <hr />
@@ -18,5 +18,6 @@ const App = ({ children }) => (
 );
 
 App.propTypes = { children: PropTypes.node };
+App.defaultProps = { children: PropTypes.node };
 
 export default App;

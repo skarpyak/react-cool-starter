@@ -1,11 +1,11 @@
 {
   "name": "react-cool-starter",
-  "version": "1.2.2",
+  "version": "1.3.8",
   "description": "A starter boilerplate for an universal web application with the best development experience and best practices.",
   "main": "index.js",
   "engines": {
-    "node": ">=5.0 <7",
-    "npm": ">=3.0 <4"
+    "node": ">=5.0 <8",
+    "npm": ">=3.0 <5"
   },
   "repository": {
     "type": "git",
@@ -14,8 +14,9 @@
   "keywords": [
     "react",
     "redux",
-    "isomorphic",
     "universal",
+    "dynamic routing",
+    "async reducers",
     "express",
     "webpack 2",
     "immutable",
@@ -33,10 +34,6 @@
     "url": "https://github.com/wellyshen/react-cool-starter/issues"
   },
   "homepage": "https://github.com/wellyshen/react-cool-starter",
-  "files": [
-    "README.md",
-    "CHANGELOG.md"
-  ],
   "scripts": {
     "start": "better-npm-run start",
     "start:production": "npm run build && npm run start:prod",
@@ -58,7 +55,7 @@
       "env": {
         "NODE_PATH": "./src",
         "NODE_ENV": "development",
-        "PORT": "3000"
+        "NODE_PORT": 3000
       }
     },
     "start:prod": {
@@ -66,14 +63,13 @@
       "env": {
         "NODE_PATH": "./src",
         "NODE_ENV": "production",
-        "PORT": "8080"
+        "NODE_PORT": 8080
       }
     },
     "build": {
-      "command": "webpack --progress --display-error-details --config ./tools/webpack",
+      "command": "webpack --progress --hide-modules --display-error-details --config ./tools/webpack/config.babel.js",
       "env": {
-        "NODE_ENV": "production",
-        "BABEL_ENV": "es"
+        "NODE_ENV": "production"
       }
     },
     "lint:js": {
@@ -89,7 +85,7 @@
       }
     },
     "clean:build": {
-      "command": "rimraf ./public/dist"
+      "command": "rimraf ./public/assets"
     },
     "clean:coverage": {
       "command": "rimraf ./coverage"
@@ -99,85 +95,88 @@
     }
   },
   "dependencies": {
-    "autoprefixer": "^6.4.1",
-    "axios": "^0.14.0",
-    "babel-core": "^6.14.0",
-    "babel-polyfill": "^6.13.0",
-    "babel-preset-es2015": "^6.14.0",
-    "babel-runtime": "^6.11.6",
+    "autoprefixer": "^6.6.1",
+    "axios": "^0.15.3",
+    "babel-core": "^6.21.0",
+    "babel-runtime": "^6.20.0",
+    "better-npm-run": "0.0.14",
+    "chalk": "^1.1.3",
     "compression": "^1.6.2",
     "express": "^4.14.0",
     "extract-text-webpack-plugin": "^2.0.0-beta.3",
-    "helmet": "^2.2.0",
+    "helmet": "^3.4.0",
     "hpp": "^0.2.1",
     "immutable": "^3.8.1",
     "morgan": "^1.7.0",
-    "react": "^15.3.2",
-    "react-addons-shallow-compare": "^15.3.2",
-    "react-dom": "^15.3.2",
-    "react-helmet": "^3.1.0",
+    "opn": "^4.0.2",
+    "react": "^15.4.2",
+    "react-addons-shallow-compare": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "react-helmet": "^3.3.0",
+    "react-hot-loader": "^3.0.0-beta.6",
     "react-immutable-proptypes": "^2.1.0",
-    "react-redux": "^4.4.5",
-    "react-router": "^2.8.1",
-    "react-router-redux": "^4.0.6",
-    "redbox-react": "^1.3.1",
+    "react-redux": "^5.0.2",
+    "react-router": "^3.0.1",
+    "react-router-redux": "^4.0.7",
+    "redbox-react": "^1.3.3",
     "redux": "^3.6.0",
-    "redux-immutable": "^3.0.8",
+    "redux-immutable": "^3.0.10",
     "redux-thunk": "^2.1.0",
     "serialize-javascript": "^1.3.0",
-    "serve-favicon": "^2.3.0",
-    "stylelint-webpack-plugin": "^0.3.1",
-    "webpack": "^2.1.0-beta.25",
-    "webpack-dev-middleware": "^1.8.1",
-    "webpack-hot-middleware": "^2.12.2",
-    "webpack-isomorphic-tools": "^2.5.8"
+    "serve-favicon": "^2.3.2",
+    "stylelint-webpack-plugin": "^0.5.1",
+    "webpack": "^2.2.0-rc.4",
+    "webpack-dev-middleware": "^1.9.0",
+    "webpack-hot-middleware": "^2.15.0",
+    "webpack-isomorphic-tools": "^2.6.6"
   },
   "devDependencies": {
-    "babel-eslint": "^6.1.2",
-    "babel-loader": "^6.2.5",
-    "babel-plugin-istanbul": "^2.0.1",
+    "babel-eslint": "^7.1.1",
+    "babel-loader": "^6.2.10",
+    "babel-plugin-istanbul": "^3.1.2",
+    "babel-plugin-system-import-transformer": "^2.4.0",
     "babel-plugin-transform-runtime": "^6.15.0",
-    "babel-preset-react": "^6.11.1",
-    "babel-preset-stage-0": "^6.5.0",
-    "better-npm-run": "0.0.11",
+    "babel-preset-latest": "^6.16.0",
+    "babel-preset-react": "^6.16.0",
+    "babel-preset-stage-0": "^6.16.0",
     "chai": "^3.5.0",
-    "chai-enzyme": "^0.5.1",
-    "coveralls": "^2.11.14",
-    "css-loader": "^0.25.0",
-    "enzyme": "^2.4.1",
-    "eslint": "^3.5.0",
-    "eslint-config-airbnb": "^11.1.0",
-    "eslint-loader": "^1.5.0",
-    "eslint-plugin-import": "^1.15.0",
-    "eslint-plugin-jsx-a11y": "^2.2.2",
-    "eslint-plugin-react": "^6.3.0",
-    "file-loader": "^0.9.0",
-    "image-webpack-loader": "^2.0.0",
-    "imports-loader": "^0.6.5",
+    "chai-enzyme": "^0.6.1",
+    "coveralls": "^2.11.15",
+    "css-loader": "^0.26.1",
+    "enzyme": "^2.7.0",
+    "eslint": "^3.13.1",
+    "eslint-config-airbnb": "^14.0.0",
+    "eslint-loader": "^1.6.1",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^3.0.2",
+    "eslint-plugin-react": "^6.9.0",
+    "image-webpack-loader": "^3.1.0",
+    "imports-loader": "^0.7.0",
     "json-loader": "^0.5.4",
     "karma": "^1.3.0",
     "karma-cli": "^1.0.1",
     "karma-coverage": "^1.1.1",
-    "karma-mocha": "^1.1.1",
-    "karma-mocha-reporter": "^2.2.0",
+    "karma-mocha": "^1.3.0",
+    "karma-mocha-reporter": "^2.2.1",
     "karma-phantomjs-launcher": "^1.0.2",
     "karma-sourcemap-loader": "^0.3.7",
-    "karma-webpack": "^1.8.0",
-    "mocha": "^3.0.2",
-    "node-sass": "^3.10.0",
-    "nodemon": "^1.10.2",
+    "karma-webpack": "^2.0.1",
+    "mocha": "^3.2.0",
+    "node-sass": "^4.3.0",
+    "nodemon": "^1.11.0",
+    "null-loader": "^0.1.1",
     "phantomjs": "^2.1.7",
-    "postcss": "^5.2.0",
-    "postcss-loader": "^0.13.0",
-    "react-addons-test-utils": "^15.3.2",
-    "react-hot-loader": "^3.0.0-beta.5",
-    "redux-mock-store": "^1.2.0",
+    "postcss": "^5.2.10",
+    "postcss-loader": "^1.2.2",
+    "react-addons-test-utils": "^15.4.2",
+    "react-hot-loader": "^3.0.0-beta.6",
+    "redux-mock-store": "^1.2.1",
     "rimraf": "^2.5.4",
-    "sass-loader": "^4.0.2",
-    "sinon": "^2.0.0-pre.2",
+    "sass-loader": "^4.1.1",
+    "sinon": "^2.0.0-pre.5",
     "style-loader": "^0.13.1",
-    "stylelint": "^7.3.1",
-    "stylelint-config-standard": "^13.0.2",
+    "stylelint": "^7.7.1",
+    "stylelint-config-standard": "^15.0.1",
     "url-loader": "^0.5.7"
   }
 }

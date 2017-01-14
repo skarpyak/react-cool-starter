@@ -1,27 +1,35 @@
 import React from 'react';
 import { render, unmountComponentAtNode } from 'react-dom';
 import { Provider } from 'react-redux';
-import { Router, browserHistory } from 'react-router';
+import { match, Router, browserHistory } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux';
 import { fromJS } from 'immutable';
-import configureStore from './configureStore';
+import { AppContainer } from 'react-hot-loader';
+import configureStore from './redux/store';
+import { createSelectLocationState } from './util/helpers';
 
-const initialState = fromJS(window.__INITIAL_STATE__);  // redux-immutable only allow immutable obj
+// redux-immutable only allow immutable obj
+const initialState = fromJS(window.__INITIAL_STATE__);
 const store = configureStore(initialState);
 const history = syncHistoryWithStore(browserHistory, store, {
-  selectLocationState: state => state.get('routing').toJS(),
+  selectLocationState: createSelectLocationState('routing'),
 });
 const mountNode = document.getElementById('react-view');
 
 const renderApp = () => {
-  const routes = require('./routes').default;
+  const routes = require('./routes').default(store);
 
-  render(
-    <Provider store={store}>
-      <Router history={history} routes={routes} />
-    </Provider>,
-    mountNode
-  );
+  // Sync routes both on client and server
+  match({ history, routes }, (error, redirectLocation, renderProps) => {
+    render(
+      <AppContainer>
+        <Provider store={store}>
+          <Router {...renderProps} />
+        </Provider>
+      </AppContainer>,
+      mountNode,
+    );
+  });
 };
 
 // Enable hot reload by react-hot-loader
@@ -37,9 +45,11 @@ if (module.hot) {
   };
 
   module.hot.accept('./routes', () => {
-    // Prevent the hot reloading error from react-router
-    unmountComponentAtNode(mountNode);
-    reRenderApp();
+    setImmediate(() => {
+      // Preventing the hot reloading error from react-router
+      unmountComponentAtNode(mountNode);
+      reRenderApp();
+    });
   });
 }
 

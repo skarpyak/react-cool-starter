@@ -3,21 +3,23 @@ import ImmutablePropTypes from 'react-immutable-proptypes';
 import shallowCompare from 'react-addons-shallow-compare';
 import { connect } from 'react-redux';
 import Helmet from 'react-helmet';
-import * as action from '../../actions/fetchUsers';
+import * as action from './action';
 import UserList from '../../components/UserList';
 
-import styles from './Home.scss';
+import styles from './styles.scss';
 
 class Home extends Component {
+  // Fetching data method for both server/client side rendering
   static fetchData(dispatch) {
     return Promise.all([
-      dispatch(action.fetchUsersIfNeeded()),
+      dispatch(action.fetchDataIfNeeded()),
     ]);
   }
 
   componentDidMount() {
     const { dispatch } = this.props;
 
+    // Fetching data for client side rendering
     Home.fetchData(dispatch);
   }
 
@@ -27,18 +29,18 @@ class Home extends Component {
   }
 
   displayUserList = () => {
-    const { users } = this.props;
+    const { home } = this.props;
 
-    if (users.get('readyState') === action.USERS_INVALID ||
-      users.get('readyState') === action.USERS_FETCHING) {
+    if (!home.get('readyState') || home.get('readyState') === action.USERS_INVALID ||
+      home.get('readyState') === action.USERS_REQUESTING) {
       return <p>Loading...</p>;
     }
 
-    if (users.get('readyState') === action.USERS_FETCH_FAILED) {
-      return <p>Oops, Failed to fetch users!</p>;
+    if (home.get('readyState') === action.USERS_FAILURE) {
+      return <p>Oops, Failed to load list!</p>;
     }
 
-    return <UserList list={users.get('list')} />;
+    return <UserList list={home.get('list')} />;
   }
 
   render() {
@@ -52,10 +54,15 @@ class Home extends Component {
 }
 
 Home.propTypes = {
-  users: ImmutablePropTypes.map,
+  home: ImmutablePropTypes.map,
   dispatch: PropTypes.func,
 };
 
-const mapStateToProps = state => ({ users: state.get('users') });
+Home.defaultProps = {
+  home: ImmutablePropTypes.map,
+  dispatch: PropTypes.func,
+};
+
+const mapStateToProps = state => ({ home: state.get('home') });
 
 export default connect(mapStateToProps)(Home);

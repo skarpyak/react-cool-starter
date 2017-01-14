@@ -1,10 +1,12 @@
 # <div align="center"><img src="https://cloud.githubusercontent.com/assets/21308003/18472722/9fae90f6-79eb-11e6-8e42-ebca5e9b5cc9.png" height="250px" alt="Banner" /></div>
 
-A simple but feature rich starter boilerplate for you to build an [universal](https://medium.com/@mjackson/universal-javascript-4761051b7ae9#.mtjf14xy5) web app with the best development experience and a focus on performance and best practices.
+A simple but feature rich starter boilerplate with [universal](https://medium.com/@mjackson/universal-javascript-4761051b7ae9#.mtjf14xy5), [React Router](https://github.com/reactjs/react-router) dynamic routing, async [Redux](https://github.com/reactjs/redux) reducers, async data fetching and code-splitting.
 
-Built on the top of [Node.js](https://nodejs.org/en/), [Express](https://expressjs.com/), [React](https://facebook.github.io/react/), [Redux](https://github.com/reactjs/redux) and [React Router](https://github.com/reactjs/react-router). Includes all the hot stuff and modern web development tools such as [Webpack 2](https://gist.github.com/sokra/27b24881210b56bbaff7), [Babel](https://babeljs.io/), [PostCSS](https://github.com/postcss/postcss-loader), [Immutable-js](https://facebook.github.io/immutable-js/) and [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-extension). See section [**“Features”**](#features) for more other awesome features you can expect.
+The project built on the top of [Node.js](https://nodejs.org/en/), [Express](https://expressjs.com/), [React](https://facebook.github.io/react/), [Redux](https://github.com/reactjs/redux) and [React Router](https://github.com/reactjs/react-router). Includes all the hot stuff and modern web development tools such as [Webpack 2](https://webpack.js.org/), [Babel](https://babeljs.io/), [PostCSS](https://github.com/postcss/postcss-loader), [React Hot Loader 3](https://github.com/gaearon/react-hot-loader), [Immutable-js](https://facebook.github.io/immutable-js/) and [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-extension). See section [**“Features”**](#features) for more other awesome features you can expect.
 
 I will improve the starter boilerplate continuously and keep all of the technologies on trend. Welcome to join me if you want. Hope you guys love it 😉
+
+> 👻 I'm curious what this starter boilerplate helps you guys do anything? Please feel free to [tell me](https://github.com/wellyshen/react-cool-starter/issues/6), let's make some sharing between us. 
 
 [![Build Status](https://travis-ci.org/wellyshen/react-cool-starter.svg?branch=master)](https://travis-ci.org/wellyshen/react-cool-starter)
 [![dependencies Status](https://david-dm.org/wellyshen/react-cool-starter/status.svg)](https://david-dm.org/wellyshen/react-cool-starter)
@@ -17,30 +19,30 @@ I will improve the starter boilerplate continuously and keep all of the technolo
 
 Really cool starter boilerplate with the most popular technologies:
 
-* [Universal](https://medium.com/@mjackson/universal-javascript-4761051b7ae9#.aug1ngj77) rendering.
+* [Universal](https://medium.com/@mjackson/universal-javascript-4761051b7ae9#.aug1ngj77) rendering, dynamic routing, async redux reducers, async data fetching and code-splitting.
 * [React](https://facebook.github.io/react/) as the view.
 * [React Router](https://github.com/reactjs/react-router) as the router.
-* [react-helmet](https://github.com/nfl/react-helmet) to manage title, meta, styles and scripts tags on both server and client.
+* [Redux](https://github.com/reactjs/redux)'s futuristic [Flux](https://facebook.github.io/react/blog/2014/05/06/flux.html) implementation.
+* [Immutable-js](https://facebook.github.io/immutable-js/) provides persistent data collections which increase efficiency and simplicity.
 * [Express](https://expressjs.com/) server.
+* [Webpack 2](https://webpack.js.org/) for bundling and [**"Tree-Shaking"**](http://www.2ality.com/2015/12/webpack-tree-shaking.html) support.
 * [Babel](https://babeljs.io/) for ES6 and ES7 transpiling.
-* [morgan](https://github.com/expressjs/morgan) the HTTP request logger for server side debugging.
-* [Webpack 2](https://gist.github.com/sokra/27b24881210b56bbaff7) for bundling and [**"Tree-Shaking"**](http://www.2ality.com/2015/12/webpack-tree-shaking.html) support.
+* [React Hot Loader 3](https://github.com/gaearon/react-hot-loader) to tweak React components in real time.
+* [nodemon]() to monitor for any changes in your node.js application and automatically restart the server.
+* [axios](https://github.com/mzabriskie/axios) for universal data fetching/rehydration on the client.
+* [redux-thunk](https://github.com/gaearon/redux-thunk) as the middleware to deal with asynchronous action.
+* [react-router-redux](https://github.com/reactjs/react-router-redux) to keep your router in sync with Redux state.
+* [react-helmet](https://github.com/nfl/react-helmet) to manage title, meta, styles and scripts tags on both server and client.
+* [webpack-isomorphic-tools](https://github.com/halt-hammerzeit/webpack-isomorphic-tools) to allow require() work for statics both on client and server.
 * [Webpack Dev Middleware](http://webpack.github.io/docs/webpack-dev-middleware.html) serves the files emitted from webpack over the Express server.
 * [Webpack Hot Middleware]() allows you to add hot reloading into the Express server.
-* [webpack-isomorphic-tools](https://github.com/halt-hammerzeit/webpack-isomorphic-tools) to allow require() work for statics both on client and server.
-* [Redux](https://github.com/reactjs/redux)'s futuristic [Flux](https://facebook.github.io/react/blog/2014/05/06/flux.html) implementation.
-* [redux-thunk](https://github.com/gaearon/redux-thunk) as the middleware to deal with asynchronous action.
-* [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-extension) for next generation developer experience.
-* [react-router-redux](https://github.com/reactjs/react-router-redux) to keep your router in sync with Redux state.
-* [nodemon](http://nodemon.io/) to reload non-boundled files (e.g. `./src/server.js`).
-* [Immutable-js](https://facebook.github.io/immutable-js/) provides persistent data collections which increase efficiency and simplicity.
 * [react-addons-shallow-compare](https://facebook.github.io/react/docs/shallow-compare.html) for a performance boost, it works perfectly with immutable data structure.
-* [axios](https://github.com/mzabriskie/axios) for universal data fetching/rehydration on the client.
+* [morgan](https://github.com/expressjs/morgan) the HTTP request logger for server side debugging.
+* [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-extension) for next generation developer experience.
 * [ESLint](http://eslint.org/) to maintain a consistent javascript code style (Airbnb's code style).
 * [StyleLint](http://stylelint.io/) to maintain a consistent css/scss code style.
 * CSS and SASS support with [PostCSS](https://github.com/postcss/postcss-loader) for advanced transformations (e.g. autoprefixer). [CSS Modules](https://github.com/css-Modules/css-Modules) enabled.
 * Image (with [image-webpack-loader](https://github.com/tcoopman/image-webpack-loader) for optimizing) and Font support.
-* Hot reloading support.
 * Split vendor's libraries from client bundle.
 * No other view engines, just javascript based HTML rendering template.
 * Shared app config between development and production.
@@ -86,16 +88,16 @@ I use [better-npm-run](https://github.com/benoror/better-npm-run) to manage the 
 `npm run <script>`|Description
 ------------------|-----------
 `start`|Run your app on the development server at `localhost:3000`. HMR will be enabled.
-`start:production`|Compiles the app to `./public/dist` and run it on the production server at `localhost:8080`.
+`start:production`|Bundle your app to `./public/assets` and run it on the production server at `localhost:8080`.
 `start:prod`|Run your app on the production server only at `localhost:8080`.
-`build`|Clean the previous compiled stuff and compile your app to `./public/dist`.
+`build`|Remove the previous bundled stuff and bundle your app to `./public/assets`.
 `lint`|Lint all `.js` and `.scss` files.
 `lint:js`|Lint all `.js` files.
 `lint:style`|Lint all `.scss` files.
 `test`|Run testing once.
 `test:watch`|Run testing on every test file change.
-`clean:all`|Remove the `./public/dist` and the `./coverage` folder.
-`clean:build`|Remove the `./public/dist` folder to clean the compiled stuff.
+`clean:all`|Remove the `./public/assets` and the `./coverage` folder.
+`clean:build`|Remove the `./public/assets` folder to clean the bundled stuff.
 `clean:coverage`|Remove the `./coverage` folder to clean the code coverage report.
 
 Note: If you get the the following message, try to run `npm run build` to fix it.
@@ -109,35 +111,34 @@ Here is the structure of the app, which serve as generally accepted guidelines a
 
 ```
 .
-├── public                                      # The root path of static file
-│   ├── dist                                    # All the built files will be placed into it
-│   └── favicon.ico                             # Favicon is placed in the same path with the main HTML page
-├── src                                         # App source code
-│   ├── __tests__                               # Collections of testing files
-│   ├── actions                                 # Collections of actions
-│   ├── config                                  # App configuration settings
-│   │   ├── default.js                          # Default settings
-│   │   ├── index.js                            # Configuration entry point
-│   │   └── prod.js                             # Production settings (overrides default settings)
-│   ├── containers                              # Reusable container components
-│   ├── reducers                                # Collections of reducers (registry and injection)
-│   ├── theme                                   # App-wide style, vendor style, generally settings
-│   ├── client.js                               # App bootstrap and rendering (webpack entry)
-│   ├── configureStore.js                       # Configure and instrument redux store
-│   ├── renderHtmlPage.js                       # Main HTML page layout for app
-│   ├── routes.js                               # Routes shared between client and server side
-│   └── server.js                               # Express app (uses webpack middleware)                  
-├── tools                                       # Project related configurations (testing/build etc.)
-│   ├── testing                                 # Testing configuration settings
-│   │   ├── karma.conf.js                       # Karma configuration file
-│   │   └── test-bunlder.js                     # Karma pre-processor settings file
-│   ├── webpack                                 # Webpack configuration settings
-│   │   ├── config.js                           # Webpack configuration file
-│   │   ├── config.test.js                      # Webpack configuration file for testing (for karma config)
-│   │   ├── index.js                            # Webpack configuration entry point
-│   │   └── webpack-isomorphic-tools.config.js  # Webpack Isomorphic Tools configuration file 
-│   └── es2015Preset.js                         # es2015 preset configuration file (for .babelrc)       
-└── index.js                                    # App start point
+├── public                          # Server static files path
+│   ├── assets                      # All the bundled files will be placed into it
+│   └── favicon.ico                 # Favicon is placed in the same path with the main HTML page
+├── src                             # App source code
+│   ├── config                      # App configuration settings
+│   │   ├── default.js              # Default settings
+│   │   ├── index.js                # Configuration entry point
+│   │   └── prod.js                 # Production settings (overrides the default settings)
+│   ├── components                  # Reusable components (including scss/testing files)
+│   ├── containers                  # Container components (including assets/action/reducer/scss/testing files)
+│   ├── util                        # App-wide util (including HTML render view, helpers)
+│   ├── redux                       # Redux related configuration scripts
+│   │   ├── reducers.js             # The root reducer (registry and injection)
+│   │   └── store.js                # Configure and instrument Redux store   
+│   ├── theme                       # App-wide style, vendor style, generally settings
+│   ├── client.js                   # App bootstrap and rendering (webpack entry)
+│   ├── routes.js                   # Routes shared between client and server side
+│   └── server.js                   # Express server (with webpack dev/hot middlewares)                  
+├── tools                           # Project related configurations (testing/build etc.)
+│   ├── openBrowser                 # Utility for opening Google Chrome 
+│   ├── testing                     # Testing configuration settings
+│   │   ├── karma.conf.js           # Karma configuration file
+│   │   └── test-bunlder.js         # Karma pre-processor settings file
+│   ├── webpack                     # Webpack configuration settings
+│   │   ├── config.babel.js         # Webpack configuration file
+│   │   ├── config.test.babel.js    # Webpack configuration file for testing (for karma config)
+│   │   └── WIT.config.js           # Webpack Isomorphic Tools configuration file        
+└── index.js                        # App start point
 ```
 
 
@@ -149,7 +150,7 @@ Concering to the security and performance for Express in production, I already s
 * [hpp](https://github.com/analog-nico/hpp) - Express middleware to protect against HTTP Parameter Pollution attacks.
 * [compression](https://github.com/expressjs/compression) - Gzip compression support for speeding up Express server responses.
 
-Note: It's just a basic protected mechanism for your app, you can see [Security best practices](https://expressjs.com/en/advanced/best-practice-security.html) for more advanced configuration.
+Note: It's just a basic protected mechanism for your app, you can see the [security best practices](https://expressjs.com/en/advanced/best-practice-security.html) for more advanced configuration.
 
 
 ## Setup Redux DevTools Extension
@@ -182,16 +183,50 @@ The [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-exte
 
 [React 0.14](https://facebook.github.io/react/blog/2015/10/07/react-v0.14.html) introduced a simpler way to define components called [stateless functional components](https://facebook.github.io/react/docs/reusable-components.html#stateless-functions). These components are written in plain JavaScript functions. In the starter boilerplate I use it wherever possible.
 
-### Adding Routes
+### Adding Routes and Async Reducers
 
-Add your routes in `./src/routes.js`. For example:
+[React Router](https://github.com/reactjs/react-router) provides the dynamic routing by "Code-Splitting". It's great for building scableable apps (see the [document](https://github.com/ReactTraining/react-router/blob/master/docs/guides/DynamicRouting.md) for the detail). 
+
+Here I use the `System.import` syntax to achieve loading the components and async reducers (by Redux) via a Promise based api, which already support by [Webpack 2](https://webpack.js.org/).
+
+You can add your routes and async reducers in `./src/routes.js`. For example:
 
 ```javascript
-<Route path="/" component={App}>
-  <IndexRoute component={Home} />
-  <Route path="NewRoute" component={NewRoute} />  // Adding a new route
-  <Route path="*" component={NotFound} />
-</Route>
+import { injectReducer } from './redux/reducers';
+
+// ...
+
+export default function createRoutes(store) {
+  return {
+
+    // ...
+
+    childRoutes: [
+      {
+        path: '/path',                                                         // Define your route path here
+        getComponent(location, cb) {
+          const importModules = Promise.all([
+            System.import('./containers/MyNewRouteComponent'),                 // Add your route component here
+            System.import('./containers/MyNewRouteComponent/myAsyncReducer'),  // Add your async reducer here
+          ]);
+
+          const renderRoute = loadModule(cb);
+
+          importModules
+            .then(([Component, reducer]) => {
+              injectReducer(store, 'userInfo', reducer.default);               // Inject your async reducer 
+                                                                               // to the store
+              renderRoute(Component);
+            })
+            .catch(errorLoading);
+        },
+      },
+      
+      // ...
+
+    ],
+  };
+}
 ```
 
 ### Managing Title, Meta, Styles and Scripts
@@ -212,10 +247,10 @@ import config from './config';
 
 The starter boilerplate supports CSS, SASS and [CSS Modules](https://github.com/css-Modules/css-Modules) is enabled by default. I use [PostCSS](https://github.com/postcss/postcss-loader) plugin to parse CSS and add autoprefixer to your stylesheet. You can access your stylesheet with two ways.
 
-**With CSS Modules:**
+With CSS Modules:
 
 ```javascript
-import styles from './Home.scss';
+import styles from './styles.scss';
 
 // ...
 
@@ -229,10 +264,10 @@ render() {
 }
 ```
 
-**Without CSS Modules (you need to turn off CSS Modules from `./tools/webpack/index.js`):**
+Without CSS Modules (you need to turn off CSS Modules from `./tools/webpack/config.babel.js`):
 
 ```javascript
-import './Home.scss';
+import './styles.scss';
 
 // ...
 
@@ -246,6 +281,36 @@ render() {
 }
 ```
 
+By the way, if you want to use your based stylesheet or a vendor CSS framework, just import it through the `./src/containers/App/index.js` file, for example:
+
+```javascript
+import '../../theme/normalize.css';     // import a vendor stylesheet here
+import styles from './styles.scss';     // import your based stylesheet here
+
+const App = ({ children }) => (
+
+  // ...
+
+);
+```
+
+For the better development experience, don't forget to include those files in the `./src/util/renderHtmlPage.js`, for example:
+
+```javascript
+// ...
+
+${
+  Object.keys(assets.styles).length === 0 ?
+    `<style>${
+      // Include the vendor stylesheet and the stylesheets which you have used here
+      require('../theme/normalize.css')._style +                
+      require('../containers/App/styles.scss')._style +              
+    }</style>` : ''
+}
+
+// ...
+```
+
 ### Image and Font
 
 It's super easy to render the image and font both on client and server, the usage would be like below.
@@ -254,7 +319,7 @@ Using image:
 
 ```javascript
 // Require an image 
-<img src={require('./logo.svg')} alt="Logo" role="presentation" />
+<img src={require('./assets/logo.svg')} alt="Logo" role="presentation" />
 ```
 
 Using font-awesome:
@@ -306,7 +371,7 @@ You can write dispatches for actions that must be called for the container to be
 static fetchData(dispatch, params) {
   // Add the asynchronous actions which must be called while paga loading here
   return Promise.all([
-    dispatch(action.fetchAnUserIfNeeded(params.id)),
+    dispatch(action.fetchDataIfNeeded(params.id)),
   ]);
 }
 ```
@@ -352,35 +417,48 @@ class Home extends Component {
 
 The starter boilerplate uses [mocha](https://mochajs.org/) to run your unit tests, it uses [karma](https://karma-runner.github.io/1.0/index.html) as the test runner, and uses [enzyme](https://github.com/airbnb/enzyme) as the testing utility for React, which makes it easier to assert, manipulate, and traverse your React Components' output. Moreover it also uses [chai](http://chaijs.com/) as the assertion library and uses [sinon](https://github.com/sinonjs/sinon) to provide the standalone test spies, stubs and mocks. The unit tests focus on four parts as below:
 
-* Actions
 * Containers
 * Components
+* Actions
 * Reducers
 
-By the way, I use [babel-plugin-istanbul](https://github.com/istanbuljs/babel-plugin-istanbul) to instruments your code with Istanbul coverage, the report is generated in `./coverage` folder. You can configure `.babelrc` to ignore the files which you don't want to cover. For example:
+By the way, I use [babel-plugin-istanbul](https://github.com/istanbuljs/babel-plugin-istanbul) to instruments your code with Istanbul coverage, the report is generated in `./coverage` folder. You can configure `./tools/webpack/config.test.babel.js` to ignore the files which you don't want to cover. For example:
 
-```bash
+```javascript
 {
-  "env": {
-    "test": {
-      "plugins": [
-        ["istanbul", {
-          "exclude": [          
-            "**/*.-test.js"   # ignore testing files
-          ]
-        }]
-      ]
-    }
-  }
+  // ...
+
+  plugins: [
+    'transform-runtime',
+    ['istanbul', {
+      exclude: [
+        '**/*-test.js',   // Ignore the files which you don't want to cover here
+      ],
+    }],
+  ],
+
+  // ...
 }
 ```
 
 You can also use [istanbul's ignore hints](https://github.com/gotwarlost/istanbul/blob/master/ignoring-code-for-coverage.md#ignoring-code-for-coverage-purposes) to specify specific lines of code to skip instrumenting.
 
 
+## Troubleshooting
+
+If the hot reloading doesn't working, it might caused by the following error. To solve the problem, just click the **refresh button** from your browser.
+
+> Refused to execute script from 'app.js' because its MIME type ('text/html') is not executable, and strict MIME type checking is enabled.
+
+If you run the example of the app. And you encounter the checksum error like below, try to restart the server to solve the problem. (it's a react universal issue, this solution might not works for your further developing scenarios) 
+
+> React attempted to use reuse markup in a container but the checksum was invalid. This generally means that you are using server rendering and the markup generated on the server was not what the client was expecting. React injected new markup to compensate which works but you have lost many of the benefits of server rendering. Instead, figure out why the markup being generated is different on the client or server.
+
+
 ## To Do...
 
-There're some features I'd like to include in the starter boilerplate in the near future. If you have any great ideas or suggestions, feel free to fork the repository and share it.
+There're some features or improvements I'd like to do in the near future. If you have any great ideas or suggestions, feel free to fork the repository and share it.
 
-- [ ] Dynamic Routing
-- [ ] Internationalization
+- [ ] Replacing the Mocha testing framework with [Jest](https://facebook.github.io/jest/)
+- [ ] Optimizing Webpack bundle performance
+- [ ] Wepback backend bundling

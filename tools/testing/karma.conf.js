@@ -1,9 +1,9 @@
-/* eslint-disable */
+'use strict'; // eslint-disable-line
 
-var path = require('path');
-var webpackConfig = require('../webpack');
+const path = require('path');
+const webpackConfig = require('../webpack/config.test.babel');
 
-module.exports = function (config) {
+module.exports = (config) => {
   config.set({
     browsers: ['PhantomJS'],
 
@@ -29,7 +29,7 @@ module.exports = function (config) {
 
     // Set the format of reporter
     coverageReporter: {
-      dir: path.join(process.cwd(), 'coverage'),
+      dir: path.join(process.cwd(), './coverage'),
       reporters: [
         { type: 'html', subdir: 'html' },
         { type: 'lcov', subdir: 'lcov' },
