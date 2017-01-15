@@ -1,3 +1,24 @@
+@import '../../theme/variables';
+
 .Home {
-  padding: 0 15px;
+  background-color: $color-light-gray;
+  padding: 10px 15px;
+  width: 100%;
+  margin: 0 auto;
+
+  @media (min-width: $screen-sm) {
+    width: $container-tablet;
+  }
+
+  @media (min-width: $screen-md) {
+    width: $container-desktop;
+  }
+
+  @media (min-width: $screen-lg) {
+    width: $container-large-desktop;
+  }
+
+  button {
+    float: right;
+  }
 }

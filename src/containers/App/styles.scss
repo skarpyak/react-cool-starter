@@ -1,27 +1,42 @@
 @import '../../theme/variables';
 
 body {
-  background-color: $color-dark-gray;
+  background-color: $color-white;
   font-family: 'Helvetica-Light', Helvetica, Arial, sans-serif;
 }
 
 .App {
-  color: $color-white;
+  color: $color-dark-gray;
 
-  .header {
+  .header,
+  .footer {
+    background-color: $color-white-smoke;
     overflow: auto;
     padding: 15px;
+    width: 100%;
+    margin: 0 auto;
 
-    img {
-      float: left;
-      height: 70px;
-      margin-right: 1em;
+    @media (min-width: $screen-sm) {
+      width: $container-tablet;
+    }
+
+    @media (min-width: $screen-md) {
+      width: $container-desktop;
+    }
+
+    @media (min-width: $screen-lg) {
+      width: $container-large-desktop;
+    }
+
+    button {
+      float: right;
     }
   }
 
   hr {
+    height: 30px;
     margin-bottom: 0;
     margin-top: 0;
-    opacity: 0.15;
+    opacity: 0;
   }
 }
